@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-md-4">
+    <select name="" id="" class="form-control" (change)="getproduvalue($event)">
+      <option value="default">Select product</option>
+      <option value="lapi">lapi</option>
+      <option value="lapi5">lapi5</option>
+      <option value="lapi4">lapi4</option>
+      <option value="lapi3">lapi3</option>
+    </select>
+  </div>
+  <br />
+  <br />
+  <div class="col-md-12" [ngSwitch]="selectedProd">
+    <h4 class="text-success" *ngSwitchDefault>Please select product</h4>
+    <h4 class="text-success" *ngSwitchCase="'lapi'">lapi is selected</h4>
+    <h4 class="text-success" *ngSwitchCase="'lapi5'">lapi5 is selected</h4>
+    <h4 class="text-success" *ngSwitchCase="'lapi4'">lapi4 is selected</h4>
+    <h4 class="text-success" *ngSwitchCase="'lapi3'">lapi3 is selected</h4>
+  </div>
+</div>

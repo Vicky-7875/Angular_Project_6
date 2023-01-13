@@ -1,0 +1,53 @@
+<!-- Interpolation start-->
+
+<p>name is {{ name }}</p>
+
+<!-- exprestion -->
+<br />
+<br />
+<br />
+{{ 5 + 9 }}
+
+<!-- concatication -->
+<br />
+<br />
+<br />
+{{ "welcome " + name }}
+<!-- js propety -->
+<br />
+<br />
+<br />
+{{ name.length }}
+
+<!-- js inbuild methond -->
+<br />
+<br />
+<br />
+{{ name.toUpperCase() }}
+
+<!-- custom methond -->
+<br />
+<br />
+<br />
+{{ myMethod() }}
+
+<!-- ternary condition -->
+<br />
+<br />
+<br />
+<!-- my status is {{ appstatus ? "online" : "offline" }} -->
+my status is {{ !appstatus ? status1 : status2 }}
+<br />
+<br />
+<br />
+
+<!-- Interpolation end-->
+
+<!-- property binding start-->
+
+<!-- <input type="text" name="" id="" value="{{name}}"> -->
+<input type="text" [disabled]="false" name="" id="" [value]="!appstatus ? status1 : status2 " />
+<br>
+<br>
+<input type="text" bind-name="" [hidden]="false" id="" bind-value="name" />
+<!-- property binding end-->
