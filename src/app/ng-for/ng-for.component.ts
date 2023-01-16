@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-ng-for",
@@ -89,11 +90,14 @@ export class NgForComponent implements OnInit {
   ];
 
   users = [];
-  constructor() {}
+  constructor(private router:Router) {}
 
   getUserName(uname) {
     this.users.push({ name: uname.value });
     uname.value = "";
+    if (this.users.length > 3) 
+    this.router.navigate(['/product'])
+    // alert("more than 3record");
   }
   deleteUserName() {
     this.users.splice(this.users.length - 1);

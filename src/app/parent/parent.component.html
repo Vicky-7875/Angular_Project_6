@@ -1,0 +1,138 @@
+<div class="container mt-3">
+  <div class="row" style="margin: 0">
+    <div class="col-md-12" *ngIf="addedProd">
+      <div class="alert alert-light border d-flex align-items-center">
+        <strong class="text-success"> {{ addedProd }} </strong>
+        &nbsp;is selected and added in Cart
+
+        <button class="btn btn-success ml-auto">Checkout</button>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="ibox">
+              <div class="ibox-content product-box">
+                <div class="product-imitation">
+                  <img
+                    src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=799&q=80"
+                    alt=""
+                  />
+                </div>
+                <div class="product-desc">
+                  <span class="product-price"> $10 </span>
+                  <small class="text-muted">Category</small>
+                  <a class="product-name"> Watch</a>
+
+                  <div class="m-t text-righ">
+                    <!-- routerLink="/product/watch" -->
+                    <button
+                      class="btn btn-xs btn-outline text-white btn-primary"
+                      (click)="onSelectProd('Watch')"
+                    >
+                      Select this product
+                      <i class="fa fa-long-arrow-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="ibox">
+              <div class="ibox-content product-box">
+                <div class="product-imitation">
+                  <img
+                    src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                    alt=""
+                  />
+                </div>
+                <div class="product-desc">
+                  <span class="product-price"> $10 </span>
+                  <small class="text-muted">Category</small>
+                  <a class="product-name"> Headphone</a>
+
+                  <div class="m-t text-righ">
+                    <!-- routerLink="/product/headphone" -->
+                    <button
+                      class="btn btn-xs btn-outline text-white btn-primary"
+                      (click)="onSelectProd('Headphone')"
+                    >
+                      Select this product
+                      <i class="fa fa-long-arrow-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="ibox">
+              <div class="ibox-content product-box">
+                <div class="product-imitation">
+                  <img
+                    src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                    alt=""
+                  />
+                </div>
+                <div class="product-desc">
+                  <span class="product-price"> $10 </span>
+                  <small class="text-muted">Category</small>
+                  <a class="product-name"> Camera</a>
+
+                  <div class="m-t text-righ">
+                    <!-- routerLink="/product/camera" -->
+                    <button
+                      class="btn btn-xs btn-outline text-white btn-primary"
+                      (click)="onSelectProd('Camera')"
+                    >
+                      Select this product
+                      <i class="fa fa-long-arrow-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="ibox">
+              <div class="ibox-content product-box">
+                <div class="product-imitation">
+                  <img
+                    src="https://images.unsplash.com/photo-1560343090-f0409e92791a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80"
+                    alt=""
+                  />
+                </div>
+                <div class="product-desc">
+                  <span class="product-price"> $10 </span>
+                  <small class="text-muted">Category</small>
+                  <a class="product-name"> Shoe</a>
+
+                  <div class="m-t text-righ">
+                    <!-- routerLink="/product/shoe" -->
+                    <button
+                      class="btn btn-xs btn-outline text-white btn-primary"
+                      (click)="onSelectProd('Shoe')"
+                    >
+                      Select this product
+                      <i class="fa fa-long-arrow-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <app-child [placeholderText]="'Search in Vivektreds'"></app-child> -->
+    <app-child
+      class="w-100"
+      [productSelectedChild]="productSelected"
+      [selectedProdChild]="selectedProd"
+      (addedProdChild)="onParentFunction($event)"
+      ></app-child>
+  </div>
+</div>

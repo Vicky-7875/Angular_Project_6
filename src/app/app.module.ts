@@ -2,6 +2,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { Routes } from "@angular/router";
+import { HttpClientModule } from "@angular/common/http";
 
 // RECOMMENDED
 import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
@@ -27,13 +28,39 @@ import { ContactComponent } from "./routing/contact/contact.component";
 import { RouterModule } from "@angular/router";
 import { LoginComponent } from "./routing/login/login.component";
 import { PageNotFoundComponent } from "./routing/page-not-found/page-not-found.component";
+import { WatchComponent } from "./routing/product/watch/watch.component";
+import { HeadphoneComponent } from "./routing/product/headphone/headphone.component";
+import { CameraComponent } from "./routing/product/camera/camera.component";
+import { ShoeComponent } from "./routing/product/shoe/shoe.component";
+import { CommonCardComponent } from "./common-card/common-card.component";
+import { ParentComponent } from "./parent/parent.component";
+import { ChildComponent } from "./parent/child/child.component";
+import { ServiceComponentComponent } from "./service-component/service-component.component";
+import { Card1Component } from "./service-component/card1/card1.component";
+import { Card2Component } from "./service-component/card2/card2.component";
+import { DesignUtilityService } from "./appServices/design-utility.service";
+import { Comp1Component } from './routing/home/comp1/comp1.component';
+import { Comp2Component } from './routing/home/comp2/comp2.component';
+import { Comp3Component } from './routing/home/comp3/comp3.component';
+import { Comp4Component } from './routing/home/comp4/comp4.component';
 
 const appRoutes: Routes = [
   { path: "", redirectTo: "login", pathMatch: "full" },
   { path: "home", component: HomeComponent },
   { path: "login", component: LoginComponent },
   { path: "about", component: AboutComponent },
-  { path: "product", component: ProductComponent },
+  { path: "buy-products", component: ParentComponent },
+  {
+    path: "product",
+    component: ProductComponent,
+    children: [
+      // { path: "", component: ProductComponent },
+      { path: "watch", component: WatchComponent },
+      { path: "headphone", component: HeadphoneComponent },
+      { path: "camera", component: CameraComponent },
+      { path: "shoe", component: ShoeComponent },
+    ],
+  },
   { path: "contact", component: ContactComponent },
   { path: "**", component: PageNotFoundComponent },
 ];
@@ -59,6 +86,20 @@ const appRoutes: Routes = [
     ContactComponent,
     LoginComponent,
     PageNotFoundComponent,
+    WatchComponent,
+    HeadphoneComponent,
+    CameraComponent,
+    ShoeComponent,
+    CommonCardComponent,
+    ParentComponent,
+    ChildComponent,
+    ServiceComponentComponent,
+    Card1Component,
+    Card2Component,
+    Comp1Component,
+    Comp2Component,
+    Comp3Component,
+    Comp4Component,
   ],
   imports: [
     BrowserModule,
@@ -66,8 +107,9 @@ const appRoutes: Routes = [
     BsDatepickerModule.forRoot(),
     CarouselModule.forRoot(),
     RouterModule.forRoot(appRoutes),
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [DesignUtilityService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,0 +1,23 @@
+<!-- <div class="card m-auto" style="width: 18rem">
+  <div class="card-body">
+    <h5 class="card-title">{{ product.id }}_{{ product.name }}</h5>
+    <p class="card-text">
+      Some quick example text to build on the card title and make up the bulk of
+      the card's content.
+    </p>
+
+    <button class="btn btn-success" (click)="btnClick()">
+      Newsletter Subscribe
+    </button>
+
+   
+  </div>
+</div> -->
+
+<ng-container *ngFor="let prod of product">
+  <p>
+    Product Name: <strong class="text-success">{{ prod.name }}</strong> &nbsp; Product Id :<strong class="text-success">{{
+           prod.id
+    }}</strong>
+  </p>
+</ng-container>

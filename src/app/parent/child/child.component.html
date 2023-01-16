@@ -1,0 +1,11 @@
+<p>
+  child component!
+
+  <!-- <input type="text" placeholder="{{placeholderText}}" value="" /> -->
+</p>
+
+<div class="col-md-12 bg-success text-white text-center py-2">
+  <h2 *ngIf="!productSelectedChild">Please select any product</h2>
+  <h2 *ngIf="productSelectedChild">{{ selectedProdChild }} is selected</h2>
+  <button class="btn btn-secondary" (click)="onAddProd()">Add to cart</button>
+</div>

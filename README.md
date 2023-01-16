@@ -58,17 +58,18 @@ view -> component
 event binding
 
 ---
-template referance variable(local refe valiable) 
 
+template referance variable(local refe valiable)
 
--------------
+---
+
 two way data binding
 component <--> view
 
------------
+---
 
-Directive ---angular instruction  for changing behaviour
-1)components(directive with oew component) 
+Directive ---angular instruction for changing behaviour
+1)components(directive with oew component)
 --component
 
 2)structual(manipulating the dom element)
@@ -77,13 +78,58 @@ ngIf,ngFor,ngSwitch
 3Attribute(change the look and behavior of the dom)
 ngStyle,ngClass
 
-
-
--------------------------------------------------
+---
 
 push() & splice()
 
--------------------------------
+---
+
 routings -page navigation
 router redirection
 nested route
+router.navigate
+
+ng-content
+ng-container
+
+---
+
+component communication
+import @input or @output decorator in chlid
+
+parent to child -> @input
+child to parent -> @output
+
+@input and Custom Property
+[]=''
+
+@output and Custom Event
+()=()
+
+---
+
+services -> reuseable type class (store any type of data)
+
+---
+
+## dependancy injection
+
+28 \_29
+excersise and solution
+
+---
+
+## 30_http & observable
+
+## 31_fetch data json place holder
+http client
+httpClient module
+---
+
+## 32 Subject and Behaviour Subject('Initial value take')
+
+## 33 lifecycle hooks
+
+
+
+
