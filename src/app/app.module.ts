@@ -39,10 +39,14 @@ import { ServiceComponentComponent } from "./service-component/service-component
 import { Card1Component } from "./service-component/card1/card1.component";
 import { Card2Component } from "./service-component/card2/card2.component";
 import { DesignUtilityService } from "./appServices/design-utility.service";
-import { Comp1Component } from './routing/home/comp1/comp1.component';
-import { Comp2Component } from './routing/home/comp2/comp2.component';
-import { Comp3Component } from './routing/home/comp3/comp3.component';
-import { Comp4Component } from './routing/home/comp4/comp4.component';
+import { Comp1Component } from "./routing/home/comp1/comp1.component";
+import { Comp2Component } from "./routing/home/comp2/comp2.component";
+import { Comp3Component } from "./routing/home/comp3/comp3.component";
+import { Comp4Component } from "./routing/home/comp4/comp4.component";
+import { TestDirectiveDirective } from "./appDirectives/test-directive.directive";
+import { VtPipe } from "./appPipes/vt.pipe";
+import { FilterPipe } from "./appPipes/filter.pipe";
+import { FormsComponent } from "./forms/forms.component";
 
 const appRoutes: Routes = [
   { path: "", redirectTo: "login", pathMatch: "full" },
@@ -50,6 +54,7 @@ const appRoutes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "about", component: AboutComponent },
   { path: "buy-products", component: ParentComponent },
+  { path: "forms", component: FormsComponent },
   {
     path: "product",
     component: ProductComponent,
@@ -100,6 +105,10 @@ const appRoutes: Routes = [
     Comp2Component,
     Comp3Component,
     Comp4Component,
+    TestDirectiveDirective,
+    VtPipe,
+    FilterPipe,
+    FormsComponent,
   ],
   imports: [
     BrowserModule,

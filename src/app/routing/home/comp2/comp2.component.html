@@ -4,10 +4,21 @@
   <p>
     User Name: <strong>{{ userName }}</strong>
   </p>
-  <div class="d-flex align-items-center pt-3">
-    <input type="text" #uname placeholder="update name" />
-    <button class="btn btn-secondary ml-auto" (click)="updateUsername(uname)">
+  <div appTestDirective class="d-flex align-items-center p-3">
+    <!-- <input type="text" #uname placeholder="update name" /> -->
+    <!-- <button class="btn btn-secondary ml-auto" (click)="updateUsername(uname)"> -->
+    <button class="btn btn-secondary ml-auto" (click)="clickme()">
       Submit
     </button>
+    &nbsp;
+    <button class="btn btn-secondary ml-auto" (click)="changeColor('Red')">
+      Red
+    </button>
+    &nbsp;
+    <button class="btn btn-secondary ml-auto" (click)="changeColor('green')">
+      green
+    </button>
+    <br />
   </div>
+  <ng-content></ng-content>
 </div>

@@ -68,14 +68,15 @@ component <--> view
 
 ---
 
-Directive ---angular instruction for changing behaviour
+## Directive ---angular instruction for changing behaviour
+
 1)components(directive with oew component)
 --component
 
 2)structual(manipulating the dom element)
 ngIf,ngFor,ngSwitch
 
-3Attribute(change the look and behavior of the dom)
+3Attribute(change the appereace and behavior of the dom)
 ngStyle,ngClass
 
 ---
@@ -114,7 +115,8 @@ services -> reuseable type class (store any type of data)
 
 ## dependancy injection
 
-28 \_29
+## 28 29
+
 excersise and solution
 
 ---
@@ -122,14 +124,88 @@ excersise and solution
 ## 30_http & observable
 
 ## 31_fetch data json place holder
+
 http client
 httpClient module
+
 ---
 
 ## 32 Subject and Behaviour Subject('Initial value take')
 
 ## 33 lifecycle hooks
 
+1)constructor
+2)ngOnChange (@input bind value changes every time it call)
+3)ngOnInit(component intialization)
+4)ngDoCheck(any chnage or action in compopent detection)
+5)ngAfterConentenInit(ng content intitailze )
+6)ngAfterConentenChecked(ng content inside it change )
+7)ngAfterViewInit(compoent initali completely done)
+8)ngAfterViewChecked(compoent and child view all done initali completely done)
+9)ngOnDestroy(component destroy(dom se remove hota hai tb))
+
+## 34 component life cycle hooks
+
+--view about page
+
+## 35 view Child
+
+@ViewChild("box") box: ElementRef;
+@ViewChild(Comp2Component) child: Comp2Component;
+-Changechildproperty
+-callchildmethod
+
+## 36 Renderer2 & content child
+
+-dom element modify & manipulate
+-we can add text with renderer
+see home comonent
+
+## 37 ViewChild with directive
+
+--comp2
+
+## 38 hostlistner // 
+
+-are concept of directives
+-componet has self conent template
+=host element - the element that we apply our directive on is the hostment of that directive
+-that host our directive so that is hostelement
+=hostlistence---hanlde event on host element,
+
+host listener with component
+host listener with directive
+---see product page
+
+## 39 host bindiing
 
 
+## 40 Pipes
+we can use pipes to transform our output in template
 
+## 43 custom Pipes
+we can use pipes to transform our output in template
+-we can send parameter in pipe
+-see about page
+
+## 44 filter pipes 
+-created new pipe(filter)
+
+## 45  pure & impure pipe
+
+pure pipe -change detection of input
+impure pipe -every change detection of component 
+
+## 48  forms
+-template driven form 
+--------- simple basic form
+----------easy to start
+--------Based on templated(HTML)
+
+
+-reactive forms
+-----Complex form with Greator control
+-----We defines struture of form in ts
+-------based on typescript(.ts file)
+
+## 49 template driven form view child access

@@ -10,15 +10,34 @@
   </div> -->
 
   <div class="row">
-    <div class="col-md-12 text-center">
-      <h2>User Name is <strong class="text-success">{{userName}}</strong></h2>
+    <!-- <div  class="col-md-12 text-center"> -->
+    <div #box>
+      <h2>
+        User Name is <strong class="text-success">{{ userName }}</strong>
+      </h2>
     </div>
   </div>
-  <div class="row">
+  <!-- <div class="row">
     <div class="col-md-6"><app-comp1></app-comp1></div>
     <div class="col-md-6"><app-comp2></app-comp2></div>
 
     <div class="col-md-6"><app-comp3></app-comp3></div>
     <div class="col-md-6"><app-comp4></app-comp4></div>
+  </div> -->
+  <br />
+  <div class="row">
+    <div class="col-md-6">
+      <button (click)="Changechildproperty()">Change child property</button>
+      <button (click)="callchildmethod()">call child method</button>
+
+      <div class="custom-dropdown">
+        <span class="dropdown-headper"> myheader </span>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <app-comp2>
+        <p #childCom>this ng content paraa</p>
+      </app-comp2>
+    </div>
   </div>
 </div>
