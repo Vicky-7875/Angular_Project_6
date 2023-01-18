@@ -1,0 +1,137 @@
+<div class="container">
+  <p>reactive forms works!</p>
+  <div class="row justify-content-center">
+    <div class="col-md-6 bg-white rounded shadow py-3 myRecForm" [ngClass]="formStatus">
+      <form [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()">
+        <div formGroupName="userDetail">
+          <div class="form-group">
+            <label for="username">UserName *</label>
+            <input
+              type="text"
+              class="form-control"
+              id="username"
+              aria-describedby="usernameHelp"
+              placeholder="Enter UserName"
+              formControlName="username"
+            />
+            <small
+              *ngIf="
+                !myReactiveForm.get('userDetail.username').valid &&
+                myReactiveForm.get('userDetail.username').touched
+              "
+              class="text-danger"
+            >
+              <span
+                *ngIf="
+                  myReactiveForm.get('userDetail.username').errors['required']
+                "
+              >
+                Username is not valid
+              </span>
+              <span
+                *ngIf="
+                  myReactiveForm.get('userDetail.username').errors[
+                    'nameIsNotAllowed'
+                  ]
+                "
+              >
+                {{ myReactiveForm.get("userDetail.username").value }} is not
+                Allowed
+              </span>
+            </small>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address *</label>
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+              required
+              formControlName="email"
+            />
+            <small
+              *ngIf="
+                !myReactiveForm.get('userDetail.email').valid &&
+                myReactiveForm.get('userDetail.email').touched
+              "
+              class="text-danger"
+            >
+              <span
+                *ngIf="
+                  myReactiveForm.get('userDetail.email').errors &&
+                  myReactiveForm.get('userDetail.email').errors['email']
+                "
+              >
+                Please enter valid email
+              </span>
+              <span
+                *ngIf="
+                  myReactiveForm.get('userDetail.email').errors &&
+                  myReactiveForm.get('userDetail.email').errors[
+                    'emailNotAllowed'
+                  ]
+                "
+              >
+                {{ myReactiveForm.get("userDetail.email").value }} is not
+                Allowed
+              </span>
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="course">Course</label>
+          <select class="form-control" formControlName="course" id="course">
+            <option value="MEAN">MEAN</option>
+            <option value="Angular">Angular</option>
+            <option value="JS">JS</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <div class="form-check" *ngFor="let gen of genders; index as i">
+            <input
+              class="form-check-input"
+              type="radio"
+              formControlName="gender"
+              id="{{ gen.id }}"
+              value="{{ gen.gender }}"
+            />
+            <label class="form-check-label" for="{{ gen.id }}">
+              {{ gen.gender }}
+            </label>
+          </div>
+
+          <div class="form-group" formArrayName="skills">
+            <label for="skill">Skills *</label>
+            <ng-container
+              *ngFor="
+                let skill of myReactiveForm.get('skills').controls;
+                index as i
+              "
+            >
+              <input
+                type="text"
+                class="form-control mt-2"
+                id="skill"
+                formControlName="{{ i }}"
+                aria-describedby="usernameHelp"
+                placeholder="Add Skill"
+              />
+            </ng-container>
+            <button
+              class="btn btn-light btn-sm mt-2 float-right"
+              (click)="onAddSkill()"
+            >
+              + Add skill
+            </button>
+          </div>
+        </div>
+
+        <button type="submit" class="mt-4 ml-2 btn btn-success" (click)="onSubmit()">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -36,10 +36,17 @@
   </ul> -->
 
   <div class="row justify-content-center">
-    <div class="col-md-8 form-inline mb-2 ">
+    <div class="col-md-8 form-inline mb-2">
       <div class="input-group input-group-sm mb-3">
-        <input type="text" class="form-control" #add placeholder="Add product...." />
-        <button class="btn btn-success ml-2" (click)="addProduct(add)">Add to cart</button>
+        <input
+          type="text"
+          class="form-control"
+          #add
+          placeholder="Add product...."
+        />
+        <button class="btn btn-success ml-2" (click)="addProduct(add)">
+          Add to cart
+        </button>
       </div>
     </div>
     <div class="col-md-8">
@@ -56,7 +63,10 @@
     </div>
   </div>
   <div class="row justify-content-center">
-    <div class="col-md-8">
+    &nbsp;
+    <button appAutoHideDirective class="btn btn-success ml-2">show/hide</button>
+
+    <div class="col-md-8 vivek">
       <table class="table">
         <thead class="thead-dark">
           <tr>

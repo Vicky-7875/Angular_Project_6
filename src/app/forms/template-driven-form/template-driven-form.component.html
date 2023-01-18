@@ -1,0 +1,109 @@
+<div class="container">
+  <p>temeplate forms works!</p>
+  <div class="row justify-content-center">
+    <div class="col-md-6 bg-white rounded shadow py-3">
+      <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+        <!-- <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm"> -->
+        <div ngModelGroup="userDetail" #userDetail="ngModelGroup">
+          <div class="form-group">
+            <label for="username">UserName *</label>
+            <input
+              type="text"
+              class="form-control"
+              id="username"
+              name="username"
+              [(ngModel)]="username"
+              aria-describedby="usernameHelp"
+              placeholder="Enter UserName"
+              required
+            />
+            <small *ngIf="username">your username: {{ username }}</small>
+            <button class="btn-primary" (click)="setUsernmae()">
+              set user
+            </button>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address *</label>
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              name="email"
+              ngModel
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+              required
+              email
+              #email="ngModel"
+            />
+            <small *ngIf="!email.valid && email.touched"
+              >Please enter valid email</small
+            >
+          </div>
+          <span
+            *ngIf="!userDetail.valid && userDetail.touched"
+            class="text-danger"
+          >
+            Please enter valid details
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="course">Course</label>
+          <select
+            class="form-control"
+            name="course"
+            [ngModel]="defaultCourse"
+            id="course"
+          >
+            <option value="MEAN">MEAN</option>
+            <option value="Angular">Angular</option>
+            <option value="JS">JS</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <div class="form-check" *ngFor="let gen of genders; index as i">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="gender"
+              id="{{ gen.id }}"
+              value="{{ gen.gender }}"
+              [ngModel]="defaultGen"
+            />
+            <label class="form-check-label" for="{{ gen.id }}">
+              {{ gen.gender }}
+            </label>
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          [disabled]="!myForm.valid"
+          class="btn btn-success"
+          (click)="saveData()"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div *ngIf="submited" class="row justify-content-center">
+    <div class="col-md-6">
+      <h1>form data</h1>
+      <p>
+        Username: <strong>{{ formData.username }}</strong>
+      </p>
+      <p>
+        email: <strong>{{ formData.email }}</strong>
+      </p>
+      <p>
+        course: <strong>{{ formData.course }}</strong>
+      </p>
+      <p>
+        gender: <strong>{{ formData.gender }}</strong>
+      </p>
+    </div>
+  </div>
+</div>

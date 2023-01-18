@@ -165,7 +165,7 @@ see home comonent
 
 --comp2
 
-## 38 hostlistner // 
+## 38 hostlistner //
 
 -are concept of directives
 -componet has self conent template
@@ -179,33 +179,87 @@ host listener with directive
 
 ## 39 host bindiing
 
-
 ## 40 Pipes
+
 we can use pipes to transform our output in template
 
 ## 43 custom Pipes
+
 we can use pipes to transform our output in template
 -we can send parameter in pipe
 -see about page
 
-## 44 filter pipes 
+## 44 filter pipes
+
 -created new pipe(filter)
 
-## 45  pure & impure pipe
+## 45 pure & impure pipe
 
 pure pipe -change detection of input
-impure pipe -every change detection of component 
+impure pipe -every change detection of component
 
-## 48  forms
--template driven form 
+## 48 forms
+
+-template driven form
 --------- simple basic form
 ----------easy to start
 --------Based on templated(HTML)
-
 
 -reactive forms
 -----Complex form with Greator control
 -----We defines struture of form in ts
 -------based on typescript(.ts file)
 
-## 49 template driven form view child access
+## 49 50 template driven form view child access
+
+setValue & patchValue
+--forms page
+
+## 51 52 reeactive form
+
+--forms page
+
+## 53 reeactive form array
+
+--forms page
+
+## 54 angular forms ---custom validator error codes
+
+--reactive foem
+
+# 55 angular forms ---custom async validator
+
+--reactive form
+
+# 56 anugular form --status & value change
+
+--set ,patch value & reset reactive form
+
+# 57 Module understading(1)
+
+app.module.ts
+
+components
+directives
+pipes
+services
+
+# 58 feature modules (2)
+
+--multiple split module import in main module
+--when we use
+-easy to manage
+
+# 58 feature modules (3)
+
+AppModule
+|
+|-product module
+|-service module
+
+# 58 shared modules (4)
+
+Duplication declaration
+(Common issue)
+
+

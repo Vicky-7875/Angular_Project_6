@@ -1,0 +1,18 @@
+input.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched {
+  border: 1px solid red;
+  box-shadow: 0 0 13px inset #ff00004d;
+}
+
+.myRecForm.INVALID {
+  border: 1px solid red;
+  box-shadow: 0 0 31px #ff00004d !important;
+}
+.myRecForm.PENDING {
+  border: 1px solid #efef18;
+  box-shadow: 0 0 31px #f7f717c5 !important;
+}
+.myRecForm.VALID {
+  border: 1px solid #42d742;
+  box-shadow: 0 0 31px #17e317b5 !important;
+}

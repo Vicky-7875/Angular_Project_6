@@ -1,7 +1,8 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
-import { Routes } from "@angular/router";
+import { FormsModule } from "@angular/forms"; //for template driven form
+import { ReactiveFormsModule } from "@angular/forms";
+
 import { HttpClientModule } from "@angular/common/http";
 
 // RECOMMENDED
@@ -23,15 +24,15 @@ import { NgswitchComponent } from "./ngswitch/ngswitch.component";
 import { NgForComponent } from "./ng-for/ng-for.component";
 import { HomeComponent } from "./routing/home/home.component";
 import { AboutComponent } from "./routing/about/about.component";
-import { ProductComponent } from "./routing/product/product.component";
+// import { ProductComponent } from "./routing/product/product.component";
 import { ContactComponent } from "./routing/contact/contact.component";
-import { RouterModule } from "@angular/router";
+// import { RouterModule } from "@angular/router";
 import { LoginComponent } from "./routing/login/login.component";
 import { PageNotFoundComponent } from "./routing/page-not-found/page-not-found.component";
-import { WatchComponent } from "./routing/product/watch/watch.component";
-import { HeadphoneComponent } from "./routing/product/headphone/headphone.component";
-import { CameraComponent } from "./routing/product/camera/camera.component";
-import { ShoeComponent } from "./routing/product/shoe/shoe.component";
+// import { WatchComponent } from "./routing/product/watch/watch.component";
+// import { HeadphoneComponent } from "./routing/product/headphone/headphone.component";
+// import { CameraComponent } from "./routing/product/camera/camera.component";
+// import { ShoeComponent } from "./routing/product/shoe/shoe.component";
 import { CommonCardComponent } from "./common-card/common-card.component";
 import { ParentComponent } from "./parent/parent.component";
 import { ChildComponent } from "./parent/child/child.component";
@@ -47,28 +48,13 @@ import { TestDirectiveDirective } from "./appDirectives/test-directive.directive
 import { VtPipe } from "./appPipes/vt.pipe";
 import { FilterPipe } from "./appPipes/filter.pipe";
 import { FormsComponent } from "./forms/forms.component";
+import { ReactiveFormComponent } from "./forms/reactive-form/reactive-form.component";
+import { TemplateDrivenFormComponent } from "./forms/template-driven-form/template-driven-form.component";
+import { AppRoutingModule } from "./app.routing.module";
+import { ProductModule } from "./routing/product/product.module";
+import { AutoHideDirective } from "./appDirectives/auto-hide.directive";
+import { SharedModuleModule } from "./sharedModules/shared-module.module";
 
-const appRoutes: Routes = [
-  { path: "", redirectTo: "login", pathMatch: "full" },
-  { path: "home", component: HomeComponent },
-  { path: "login", component: LoginComponent },
-  { path: "about", component: AboutComponent },
-  { path: "buy-products", component: ParentComponent },
-  { path: "forms", component: FormsComponent },
-  {
-    path: "product",
-    component: ProductComponent,
-    children: [
-      // { path: "", component: ProductComponent },
-      { path: "watch", component: WatchComponent },
-      { path: "headphone", component: HeadphoneComponent },
-      { path: "camera", component: CameraComponent },
-      { path: "shoe", component: ShoeComponent },
-    ],
-  },
-  { path: "contact", component: ContactComponent },
-  { path: "**", component: PageNotFoundComponent },
-];
 
 @NgModule({
   declarations: [
@@ -87,14 +73,11 @@ const appRoutes: Routes = [
     NgForComponent,
     HomeComponent,
     AboutComponent,
-    ProductComponent,
+    
     ContactComponent,
     LoginComponent,
     PageNotFoundComponent,
-    WatchComponent,
-    HeadphoneComponent,
-    CameraComponent,
-    ShoeComponent,
+
     CommonCardComponent,
     ParentComponent,
     ChildComponent,
@@ -109,14 +92,21 @@ const appRoutes: Routes = [
     VtPipe,
     FilterPipe,
     FormsComponent,
+    ReactiveFormComponent,
+    TemplateDrivenFormComponent,
+    // AutoHideDirective
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+    AppRoutingModule,
+    ProductModule,
+    FormsModule, //for template driven form
+    ReactiveFormsModule,
     BsDatepickerModule.forRoot(),
     CarouselModule.forRoot(),
-    RouterModule.forRoot(appRoutes),
+    // RouterModule.forRoot(appRoutes),
     HttpClientModule,
+    SharedModuleModule
   ],
   providers: [DesignUtilityService],
   bootstrap: [AppComponent],
