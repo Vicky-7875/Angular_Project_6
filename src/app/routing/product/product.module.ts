@@ -6,11 +6,12 @@ import { ShoeComponent } from "./shoe/shoe.component";
 import { WatchComponent } from "./watch/watch.component";
 import { ProductComponent } from "./product.component";
 import { RouterModule, Routes } from "@angular/router";
-import { AutoHideDirective } from "src/app/appDirectives/auto-hide.directive";
+// import { AutoHideDirective } from "src/app/appDirectives/auto-hide.directive";
 import { SharedModuleModule } from "src/app/sharedModules/shared-module.module";
 const proRoutes: Routes = [
   {
-    path: "product",
+    // path: "product", //lazy loading
+    path: "",
     component: ProductComponent,
     children: [
       // { path: "", component: ProductComponent },
@@ -30,6 +31,10 @@ const proRoutes: Routes = [
     ShoeComponent,
     // AutoHideDirective
   ],
-  imports: [CommonModule, RouterModule.forChild(proRoutes),SharedModuleModule],
+  imports: [CommonModule, RouterModule.forChild(proRoutes), SharedModuleModule],
 })
-export class ProductModule {}
+export class ProductModule {
+  constructor() {
+    console.log("product module");
+  }
+}

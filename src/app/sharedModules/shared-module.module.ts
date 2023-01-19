@@ -7,4 +7,6 @@ import { AutoHideDirective } from "../appDirectives/auto-hide.directive";
   declarations: [AutoHideDirective],
   exports: [AutoHideDirective],
 })
-export class SharedModuleModule {}
+export class SharedModuleModule {
+ 
+}

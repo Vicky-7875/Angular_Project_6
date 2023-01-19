@@ -51,7 +51,7 @@ import { FormsComponent } from "./forms/forms.component";
 import { ReactiveFormComponent } from "./forms/reactive-form/reactive-form.component";
 import { TemplateDrivenFormComponent } from "./forms/template-driven-form/template-driven-form.component";
 import { AppRoutingModule } from "./app.routing.module";
-import { ProductModule } from "./routing/product/product.module";
+// import { ProductModule } from "./routing/product/product.module";
 import { AutoHideDirective } from "./appDirectives/auto-hide.directive";
 import { SharedModuleModule } from "./sharedModules/shared-module.module";
 
@@ -99,7 +99,7 @@ import { SharedModuleModule } from "./sharedModules/shared-module.module";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ProductModule,
+    // ProductModule,
     FormsModule, //for template driven form
     ReactiveFormsModule,
     BsDatepickerModule.forRoot(),
@@ -111,4 +111,9 @@ import { SharedModuleModule } from "./sharedModules/shared-module.module";
   providers: [DesignUtilityService],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(){
+    console.log('APP module');
+    
+  }
+}

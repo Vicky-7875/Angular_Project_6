@@ -250,16 +250,28 @@ services
 --when we use
 -easy to manage
 
-# 58 feature modules (3)
+# 59 feature modules (3)
 
 AppModule
 |
 |-product module
 |-service module
 
-# 58 shared modules (4)
+# 60 shared modules (4)
 
 Duplication declaration
 (Common issue)
 
+# 61 module Loading strategy (5)
+
+1)Egaer loading->all compenet ,directive,piepe,servcie are download on user machine before load
+--small app use eger loading
+
+2)Lazy loading->
+app start load app.module egaely and other modules are load on our demamd
+
+3)pre loading-> when user visit our site other module load silently background
+----pre loading use after lazy loading 
+
+## 62 Lazy loading 
 
